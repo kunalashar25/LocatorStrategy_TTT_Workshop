@@ -6,9 +6,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class DriverManager {
 
-    private String pageUrl = "";
+    private String pageUrl = "./src/test/resources/assignment1.html";
 
     /**
      * Navigate to Home Page
@@ -16,9 +19,9 @@ public class DriverManager {
      * @return WebDriver instance
      */
     public WebDriver loadHomePage() {
+        Path sampleFile = Paths.get(pageUrl);
         WebDriver driver = createDriver();
-        driver.get(pageUrl);
-
+        driver.get(sampleFile.toUri().toString());
         return driver;
     }
 
@@ -47,5 +50,9 @@ public class DriverManager {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("disable-infobars");
         return options;
+    }
+
+    public void closeBrowser(WebDriver driver){
+        driver.quit();
     }
 }

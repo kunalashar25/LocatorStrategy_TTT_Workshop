@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <div id="idExample" class="randomClass">
+        <form id="userForm">
+            <div id="userId-wrapper">
+                <div>
+                    <label class="form-label" id="userId-label">User Id</label>
+                </div>
+                <div>
+                    <input type="text" id="userId" disabled>
+                </div>
+                <br>
+            </div>
+            <div id="userName-wrapper">
+                <div>
+                    <label class="form-label" id="userName-label">Full Name</label>
+                </div>
+                <div>
+                    <input placeholder="Full Name" type="text" id="userName" hidden>
+                </div>
+                <div>
+                    <input placeholder="Full Name" type="text" class="userName" id="uname_a1">
+                </div>
+            </div>
+            <br>
+            <div id="userEmail-wrapper">
+                <div>
+                    <label class="form-label" id="label_userEmail">Email</label>
+                </div>
+                <div>
+                    <input placeholder="name@example.com" type="email">
+                </div>
+            </div>
+            <br>
+            <div id="address-wrapper">
+                <div>
+                    <label class="form-label" id="address-label">Current Address</label>
+                </div>
+                <div>
+                    <textarea rows="5" cols="20" id="address" class="form-control"></textarea>
+                </div>
+            </div>
+            <br>
+            <div>
+                <div>
+                    <button id="submit" type="button" name="submitButton1" onclick="enableElement(); successAlert()">Submit</button>
+                </div>
+            </div>
+            <br>
+            <div name="links">
+                <div>
+                    <a href=# name="forgot" class="forgotUsername" id="userName">Forgot Username?</a>
+                    <a href=# name="forgot" class="forgotPassword_fpwd">Forgot Password?</a>
+                    <a href=#>Forgot Email?</a>
+                </div>
+                <a href=#>Go To Home</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Generate Runtime UserId -->
+    <script>
+        document.getElementById("userId").value = Math.floor((Math.random() * 10)+1);
+    </script>
+
+    <!-- Enable Textbox -->
+    <script>
+        function enableElement(){
+            document.getElementById("userId").removeAttribute("disabled");
+        }
+    </script>
+
+    <!-- Display Success Alert -->
+    <script>
+        function successAlert(){
+            alert("Data Submitted!");
+        }
+    </script>
+</body>
+
+</html>
