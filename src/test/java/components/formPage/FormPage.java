@@ -17,7 +17,7 @@ public class FormPage implements  IFormPage{
         WebElement element = driver.findElement(USER_ID_TEXTBOX_DISABLED);
         if(element.isEnabled())
             Assert.assertTrue(false,"UserId textbox is not disabled");
-        return driver.findElement(USER_ID_TEXTBOX_DISABLED).getText();
+        return driver.findElement(USER_ID_TEXTBOX_DISABLED).getAttribute("value");
     }
 
     @Override

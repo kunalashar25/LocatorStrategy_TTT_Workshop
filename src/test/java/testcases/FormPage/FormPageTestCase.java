@@ -24,8 +24,8 @@ public class FormPageTestCase {
     }
 
     @Test
-    public void fillForm() {
-        new FormPageFlow(driver).fillFormDetails();
+    public void submitForm() {
+        new FormPageFlow(driver).submitForm();
     }
 
 

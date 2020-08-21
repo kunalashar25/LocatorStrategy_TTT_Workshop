@@ -17,7 +17,7 @@ public class FormPageFlow {
         faker = new Faker();
     }
 
-    public void fillFormDetails() {
+    public void submitForm() {
         IFormPage iFormPage = new FormPage(driver);
 
         // get user ID
@@ -31,11 +31,5 @@ public class FormPageFlow {
 
         // submit form
         iFormPage.submit();
-
-        // verify links
-        iFormPage.clickForgotUserName();
-        iFormPage.clickForgotPassword();
-        iFormPage.clickForgotEmail();
-        iFormPage.clickGoToHome();
     }
 }

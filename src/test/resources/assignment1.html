@@ -65,7 +65,8 @@
 
     <!-- Generate Runtime UserId -->
     <script>
-        document.getElementById("userId").value = Math.floor((Math.random() * 10)+1);
+        var val = Math.floor((Math.random() * 10)+1);
+        document.getElementById("userId").setAttribute("value",val);
     </script>
 
     <!-- Enable Textbox -->
